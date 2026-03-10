@@ -18,6 +18,16 @@ Agents often waste tokens on noisy HTML. This skill prioritizes clean markdown r
 python3 scripts/fetch_markdown.py "https://example.com/blog/post"
 ```
 
+### 中文使用示例
+
+```bash
+# 抓网页正文并输出干净 Markdown
+python3 scripts/fetch_markdown.py "https://example.com/文章"
+
+# 强制走 Jina
+python3 scripts/fetch_markdown.py "https://example.com" --strategy jina
+```
+
 Force provider:
 
 ```bash
@@ -35,6 +45,18 @@ python3 scripts/fetch_markdown.py "https://example.com" --strategy firecrawl --f
   "markdown": "# Title ..."
 }
 ```
+
+## 🎯 Trigger Phrases (EN + 中文)
+
+Use this skill when user requests look like:
+
+- fetch/read/summarize this page as markdown
+- clean this URL before summarizing
+- 抓网页正文
+- 提取网页 Markdown
+- 网页转 Markdown
+- 读取网页并总结
+- 这个链接帮我清洗一下
 
 ## 🧪 Tests
 

@@ -1,11 +1,23 @@
 ---
 name: clean-web-markdown
-description: Retrieve clean markdown from webpages for AI agents using protocol-level content negotiation and crawl-to-markdown fallbacks. Use when users ask to fetch/read/summarize websites with low-noise markdown, to improve web_fetch quality, or to process JS-heavy pages via Jina/Firecrawl.
+description: Retrieve clean markdown from webpages for AI agents using protocol-level content negotiation and crawl-to-markdown fallbacks. Use when users ask to fetch/read/summarize websites with low-noise markdown, to improve web_fetch quality, or to process JS-heavy pages via Jina/Firecrawl. Chinese trigger cues include: "抓网页正文", "提取网页 Markdown", "网页转 Markdown", "读取网页并总结", "这个链接帮我清洗一下".
 ---
 
 # clean-web-markdown
 
 Use this skill to get low-noise markdown from web pages with a deterministic fallback chain.
+
+## Usage cues (EN + 中文)
+
+Trigger this skill when requests match patterns like:
+
+- "fetch this page as clean markdown"
+- "summarize this URL, skip noisy HTML"
+- "抓网页正文"
+- "提取网页 Markdown"
+- "网页转 Markdown"
+- "读取网页并总结"
+- "这个链接帮我清洗一下"
 
 ## Workflow
 

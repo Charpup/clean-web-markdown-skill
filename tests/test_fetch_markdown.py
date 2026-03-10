@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 
 import scripts.fetch_markdown as fm
 
@@ -23,6 +24,13 @@ class FetchMarkdownTests(unittest.TestCase):
     def test_build_jina_url(self):
         url = "https://example.com/a"
         self.assertEqual(fm.build_jina_url(url), "https://r.jina.ai/https://example.com/a")
+
+    @patch("scripts.fetch_markdown.http_post_json")
+    def test_fetch_firecrawl_reads_nested_markdown(self, mock_post):
+        markdown = "# 标题\\n\\n- 项目 A：说明更详细一些\\n- 项目 B：[链接](https://example.com)"
+        mock_post.return_value = (200, '{"data": {"markdown": "' + markdown + '"}}', {})
+        result = fm.fetch_firecrawl("https://example.com", "test-key")
+        self.assertEqual(result, "# 标题\n\n- 项目 A：说明更详细一些\n- 项目 B：[链接](https://example.com)")
 
 
 if __name__ == "__main__":
