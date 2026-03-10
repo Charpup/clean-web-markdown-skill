@@ -1,0 +1,19 @@
+version: "1.0"
+skill:
+  name: clean-web-markdown
+  objective: >
+    Provide clean markdown-first web retrieval for AI agents with deterministic fallback chain.
+requirements:
+  functional:
+    - Protocol-level markdown negotiation via Accept: text/markdown
+    - Jina Reader fallback via r.jina.ai prefix
+    - Firecrawl fallback when API key is available
+    - JSON output contract with strategy and markdown fields
+  quality:
+    - Unit tests for url normalization, markdown detection, strategy ordering
+    - Clear SKILL.md trigger description
+    - Reference matrix for provider selection
+acceptance_criteria:
+  - Tests pass with python3 -m unittest tests/test_fetch_markdown.py
+  - Script returns valid JSON on success and failure
+  - SKILL.md includes integration guidance for web_fetch-style workflows
