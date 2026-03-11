@@ -73,3 +73,6 @@ python3 -m unittest tests/test_fetch_markdown.py
 ## 📄 License
 
 MIT
+
+## Changelog
+- 2026-03-11: Skill audit upgrade — normalized SKILL.md frontmatter and revalidated trigger wording/lint compatibility with OpenClaw.
